@@ -51,6 +51,7 @@ onBeforeUnmount(() => {
             </div>
             <div class="nav-actions">
                 <RouterLink class="login-link" to="/login"><i class="pi pi-user"></i></RouterLink>
+                <RouterLink class="search-link" to="/search"><i class="pi pi-search"></i></RouterLink>
                 <select v-model="selectedLang" class="language-select">
                     <option value="en">ENG</option>
                     <option value="ru">RU</option>
@@ -94,7 +95,7 @@ onBeforeUnmount(() => {
 
 nav {
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 10;
     transition: transform 0.3s ease-in-out;
@@ -169,8 +170,11 @@ nav {
     align-items: center;
     column-gap: 1.8rem;
 
-    .login-link {
+    .login-link, .search-link {
         @include f-style(18px, 500, var(--light-color));
+    }
+    .search-link{
+        display: none;
     }
 
     .language-select {
@@ -281,7 +285,7 @@ nav {
     }
 }
 
-@media only screen and (max-width:698px) {
+@media only screen and (max-width:710px) {
     .nav__menu-logo {
         .nav-menu {
             display: none;
@@ -289,8 +293,13 @@ nav {
     }
 
     .nav-actions {
+        column-gap: 1.4rem;
+
         .menu-btn {
             display: flex;
+        }
+        .search-link{
+            display: block;
         }
     }
 }
@@ -320,6 +329,9 @@ nav {
     }
     .nav-actions{
         column-gap: 1rem;
+        .search-link{
+            @include f-style(15px, 500, var(--light-color));
+        }
         .cart-action {
             i {
                 @include f-style(17px, 500, var(--light-color));
