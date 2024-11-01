@@ -13,6 +13,7 @@
 
 body{
   background-color: var(--dark-color);
+  overflow-x: hidden;
   
 }
 
@@ -32,6 +33,7 @@ body{
 
 li{
   list-style-type: none;
+
 }
 
 a{
