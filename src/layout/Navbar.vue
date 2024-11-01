@@ -66,12 +66,12 @@ onBeforeUnmount(() => {
                 <button @click="closeSidebar = !closeSidebar" class="menu-btn"><i class="pi pi-bars"></i></button>
             </div>
         </div>
-        <div :style="{ 'transform': closeSidebar ? 'translateX(0%)' : 'translateX(100%)' }"
+        <div :style="{ 'transform': closeSidebar ? 'translateX(0%)' : 'translateX(100%)',  display: closeSidebar ? 'block' : 'none'  }"
             class="responsive__menu-sidebar">
-            <div class="sidebar-header">
+            <div class="sidebar-header" :style="{  display: closeSidebar ? 'block' : 'none'}">
                 <button @click="closeSidebar = !closeSidebar"><i class="pi pi-times"></i></button>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" :style="{ display: closeSidebar ? 'block' : 'none'}">
                 <li>
                     <RouterLink class="item-link" to="/">Home</RouterLink>
                 </li>

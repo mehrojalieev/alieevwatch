@@ -7,7 +7,7 @@
     <section class="subscribe-us">
             <div class="subscribe-wrapper  container">
                     <div class="subscribe-contents">
-                        <h5 class="content-subtitle">Subscribe Us</h5>
+                        <h5 class="content-subtitle">Subscribe Us ALI</h5>
                         <h2 class="content-title">Subscribe newsletter and get -20% off</h2>
                         <p class="content-description">During most of its history the watch was a mechanical device, driven by clockwork, powered by winding a mainspring, and keeping time with an oscillating balance wheel.</p>
                         <form class="content-form">
