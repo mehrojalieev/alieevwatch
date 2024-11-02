@@ -9,6 +9,7 @@ import PrimeVue from "primevue/config"
 import 'primeicons/primeicons.css';
 
 import Select from 'primevue/select';
+import Carousel from 'primevue/carousel'
 
 
 const app = createApp(App)
@@ -16,6 +17,7 @@ const app = createApp(App)
 app.use(router)
 app.use(PrimeVue)
 app.component('Select', Select);
+app.component('Carousel', Carousel);
 
 
 app.mount('#app')
