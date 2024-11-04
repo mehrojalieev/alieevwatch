@@ -97,7 +97,6 @@ nav {
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 10;
     transition: transform 0.3s ease-in-out;
     background-color: var(--dark-color);
 }
