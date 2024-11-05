@@ -10,6 +10,6 @@ import SubscribeUs from '../components/SubscribeUs.vue';
 <template>
     <Hero/>
     <SubscribeUs/>
-    <!-- <Articles/> -->
-    <!-- <BestProducts/> -->
+    <Articles/>
+    <BestProducts/>
 </template>

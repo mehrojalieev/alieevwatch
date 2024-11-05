@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // import WatchCard from '../utils/WatchCard.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/navigation';
+
 import { Navigation } from 'swiper/modules';
 
 
@@ -27,6 +26,8 @@ const modules = [Navigation];
 
 
 <style scoped lang="scss">
+@import 'swiper/css';
+@import 'swiper/css/navigation';
     .best__products-wrapper{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
