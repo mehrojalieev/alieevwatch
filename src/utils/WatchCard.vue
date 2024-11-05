@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+// import { ref } from 'vue';
 
-const props = defineProps({
-    proudtct: {
-        type: Object,
-        required: true
-    }
-})
+// const props = defineProps({
+//     proudtct: {
+//         type: Object,
+//         required: true
+//     }
+// })
 
 </script>
 
 <template>
-    <div class="product-card">
+    <!-- <div class="product-card">
       <img :src="product.image" :alt="product.name" class="product-image" />
       <h3 class="product-name">{{ product.name }}</h3>
   
@@ -34,7 +34,7 @@ const props = defineProps({
       <button class="add-to-cart" :disabled="product.isSoldOut">
         {{ product.isSoldOut ? "Sold Out" : "Add to Cart" }}
       </button>
-    </div>
+    </div> -->
   </template>
   
  
