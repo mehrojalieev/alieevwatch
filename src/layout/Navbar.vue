@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import CartSidebar from '../components/CartSidebar.vue';
 
 const selectedLang = ref<string>("en");
 const isNavbarVisible = ref<boolean>(true);
@@ -16,7 +17,7 @@ const handleResize = () => {
     closeSidebar.value = window.innerWidth > 698 && false ;
 };
 
-onMounted(() => {
+onMounted(() => { 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);    
     handleResize();
@@ -27,6 +28,9 @@ onBeforeUnmount(() => {
     window.removeEventListener('resize', handleResize);
 });
 
+const openSidebar = ref<boolean>(false);
+
+console.log(openSidebar);
 
 
 </script>
@@ -56,7 +60,7 @@ onBeforeUnmount(() => {
                     <option value="en">ENG</option>
                     <option value="ru">RU</option>
                 </select>
-                <div class="cart-amount">
+                <div @click="openSidebar = !openSidebar" class="cart-amount">
                     <span>My Cart:</span><strong>0.00 USD</strong>
                 </div>
                 <div class="cart-action">
@@ -84,6 +88,7 @@ onBeforeUnmount(() => {
             </ul>
         </div>
     </nav>
+    <CartSidebar :openSidebar="openSidebar"/>
 </template>
 
 <style lang="scss" scoped>
@@ -98,7 +103,7 @@ nav {
     position: sticky;
     top: 0;
     transition: transform 0.3s ease-in-out;
-    background-color: var(--dark-color);
+    background-color: var(--dark-color) !important;
 }
 
 .responsive__menu-sidebar {
@@ -140,6 +145,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.4rem;
+    background-color: var(--dark-color);
 }
 
 .nav__menu-logo {
