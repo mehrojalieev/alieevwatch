@@ -104,6 +104,7 @@ nav {
     top: 0;
     transition: transform 0.3s ease-in-out;
     background-color: var(--dark-color) !important;
+    z-index: 10;
 }
 
 .responsive__menu-sidebar {
