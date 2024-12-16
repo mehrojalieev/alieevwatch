@@ -5,6 +5,7 @@ import Articles from '../components/Articles.vue';
 import Hero from '../components/Hero.vue';
 import SubscribeUs from '../components/SubscribeUs.vue';
 import Loading from '../components/Loading.vue';
+import AboutOurShops from '../components/AboutOurShops.vue';
 
 const About = defineAsyncComponent({
     loader: () => import('../views/About.vue'),
@@ -27,6 +28,7 @@ const About = defineAsyncComponent({
         </template>
     </Suspense>
     <SubscribeUs/> 
+    <AboutOurShops/>
     <Articles/>
     <BestProducts/>  
 </template>

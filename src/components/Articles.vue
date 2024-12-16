@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import ArticleImg1 from "../assets/images/article1.webp"
-import ArticleImg2 from "../assets/images/article2.webp"
-import ArticleImg3 from "../assets/images/article3.webp"
-import ArticleImg4 from "../assets/images/article4.webp"
-import ArticleImg5 from "../assets/images/article5.webp"
-import ArticleImg6 from "../assets/images/article6.webp"
-import ArticleImg7 from "../assets/images/article7.webp"
-import ArticleImg8 from "../assets/images/article8.webp"
+import ArticleImg1 from "../assets/images/articles/article1.webp"
+import ArticleImg2 from "../assets/images/articles/article2.webp"
+import ArticleImg3 from "../assets/images/articles/article3.webp"
+import ArticleImg4 from "../assets/images/articles/article4.webp"
+import ArticleImg5 from "../assets/images/articles/article5.webp"
+import ArticleImg6 from "../assets/images/articles/article6.webp"
+import ArticleImg7 from "../assets/images/articles/article7.webp"
+import ArticleImg8 from "../assets/images/articles/article8.webp"
 import { RouterLink } from 'vue-router';
 
 
