@@ -2,8 +2,9 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import CartSidebar from '../components/CartSidebar.vue';
+import { getActiveLang, setActiveLang } from '../utils/cache/local-storage';
 
-const selectedLang = ref<string>("en");
+
 const isNavbarVisible = ref<boolean>(true);
 const closeSidebar = ref<boolean>(false)
 let lastScrollY = window.scrollY;
@@ -29,9 +30,14 @@ onBeforeUnmount(() => {
 });
 
 const openSidebar = ref<boolean>(false);
+const currentLang = ref<string>(getActiveLang());
 
-console.log(openSidebar);
 
+
+const changeLanguage = (event: Event) => {
+  const selectedLang = (event.target as HTMLSelectElement).value;
+  setActiveLang(selectedLang);
+}
 
 </script>
 
@@ -56,9 +62,9 @@ console.log(openSidebar);
             <div class="nav-actions">
                 <RouterLink class="login-link" to="/login"><i class="pi pi-user"></i></RouterLink>
                 <RouterLink class="search-link" to="/search"><i class="pi pi-search"></i></RouterLink>
-                <select v-model="selectedLang" class="language-select">
-                    <option value="en">ENG</option>
-                    <option value="ru">RU</option>
+                <select @change="changeLanguage" v-model="currentLang" class="language-select">
+                    <option key="en" value="en">ENG</option>
+                    <option key="ru" value="ru">RU</option>
                 </select>
                 <div @click="openSidebar = !openSidebar" class="cart-amount">
                     <span>My Cart:</span><strong>0.00 USD</strong>
@@ -192,6 +198,7 @@ nav {
         border: 1px solid var(--light-color);
         color: var(--light-color);
         @include f-style(14px, 500, var(--light-color));
+        cursor: pointer;
     }
 
     .cart-amount {
