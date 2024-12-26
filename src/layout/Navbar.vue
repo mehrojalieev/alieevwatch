@@ -3,6 +3,9 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import CartSidebar from '../components/CartSidebar.vue';
 import { getActiveLang, setActiveLang } from '../utils/cache/local-storage';
+import {useI18n} from 'vue-i18n'
+
+const { t } = useI18n()
 
 
 const isNavbarVisible = ref<boolean>(true);
@@ -32,23 +35,28 @@ onBeforeUnmount(() => {
 const openSidebar = ref<boolean>(false);
 const currentLang = ref<string>(getActiveLang());
 
+console.log(getActiveLang());
+
+
 
 
 const changeLanguage = (event: Event) => {
+    console.log(event);
+    
   const selectedLang = (event.target as HTMLSelectElement).value;
   setActiveLang(selectedLang);
+  currentLang.value = selectedLang;
 }
-
 </script>
 
 <template>
     <nav :style="{ 'transform': isNavbarVisible ? 'translateY(0)' : 'translateY(-100%)' }">
-        <div class="nav-wrapper container">
+        <div  class="nav-wrapper container">
             <div class="nav__menu-logo">
 
                 <ul class="nav-menu">
                     <li>
-                        <RouterLink class="item-link" to="/">Home</RouterLink>
+                        <RouterLink class="item-link" to="/">{{ t('title') }}</RouterLink>
                     </li>
                     <li>
                         <RouterLink class="item-link" to="/about">About</RouterLink>
@@ -127,9 +135,8 @@ nav {
         width: 100%;
         background-color: #6400B2;
         padding: 1rem 2rem;
-
         button {
-            @include f-style(20px, 600, var(--light-color))
+            @include f-style(20px, 600, var(--light-color));
         }
     }
 
@@ -139,7 +146,6 @@ nav {
         row-gap: 1rem;
         align-items: start;
         padding: 1rem 2rem;
-
         .item-link {
             @include f-style(20px, 400, var(--gray-second))
         }
