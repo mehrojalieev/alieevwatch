@@ -74,8 +74,8 @@
             max-width: 352px;
             width: 100%;
             height: 550px;
-            object-fit: contain;
             img{
+                object-fit: cover;
                 width: 100%;
                 height: 100%;
             }
@@ -199,6 +199,97 @@
                 @include f-style(14px, 400, var(--gray-light));
                 margin-top: .8rem;
                 line-height: 20px;
+            }
+        }
+    }
+
+
+
+    @media only screen and (max-width:980px){
+        .our__shop-contents__top{
+            column-gap: 4rem;
+            .shop-contents {
+               .content-card{
+                   max-width: 100%;
+               }
+                img{
+                display: none;
+            }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width:700px){
+        .our__shop-contents__top{
+            .shop-contents {
+                .content-card{
+                max-width: 86%;
+                padding: 15px 20px;
+               
+                .item-title{
+                    @include f-style(23px, 600, var(--dark-color));
+                    margin-bottom: 7px;
+                }
+                .item-type{
+                    @include f-style(14px, 400, var(--gray-light));
+                }
+                .item-description{
+                    @include f-style(14px, 400, var(--gray-light));
+                    margin: 13px 0;
+                    line-height: 18px;
+                }
+                .color-label{
+                    @include f-style(14px, 500, var(--dark-color));
+                    select{
+                        margin-top: 7px;
+                        padding: 5px 10px;
+                        @include f-style(14px, 400, var(--gray-light));
+                    }
+                }
+                .price-actions{
+                    margin-top: 15px;
+                    .price-item{
+                        @include f-style(23px, 600, var(--dark-color));
+                        strong{
+                            @include f-style(15px, 500, var(--dark-color));
+                        }
+                        sup{
+                            @include f-style(10px, 500, var(--dark-color));
+                        }
+                    }
+                    .add-btn{
+                        padding: 7px 20px;
+                        @include f-style(14px, 400, var(--light-color));
+                    }
+                }
+            }
+                img{
+                display: none;
+            }
+            }
+        }
+    }
+
+    @media only screen and (max-width:635px){
+        .our__shop-contents__top{
+            column-gap: 1.8rem;
+            .back-image{
+            max-width: 352px;
+            height: 460px;
+        }
+        }
+    }
+
+    @media only screen and (max-width:570px){
+        .our__shop-contents__top{
+            flex-direction: column;
+            padding: 0 3rem;
+            align-items: center;
+            .shop-contents{
+                .content-card{
+                    max-width: 100%;
+                }
             }
         }
     }

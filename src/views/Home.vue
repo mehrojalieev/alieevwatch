@@ -29,6 +29,6 @@ const About = defineAsyncComponent({
     </Suspense>
     <SubscribeUs/> 
     <AboutOurShops/>
-    <Articles/>
-    <BestProducts/>  
+    <!-- <Articles/>
+    <BestProducts/>   -->
 </template>
